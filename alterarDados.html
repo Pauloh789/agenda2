@@ -74,10 +74,10 @@
                     <div class="col-sm">
                         <div class="card border-primary my-5">
                             <div class="card-header bg-primary text-white" > 
-                                <h5> Cadastro de novo usuario</h5>
+                                <h5> Alterar dados</h5>
                             </div>
                             <div class="card-body">
-                                <form id="novoUsuario" method="post" action="novoUsuario.php">
+                                <form id="novoUsuario" method="post" action="main.html">
                                     <div class="row">
                                         <div class="col-sm">
                                             <div class="form-group">
@@ -121,32 +121,47 @@
                                     <div class="row">
                                         <div class="col-sm">
                                             <div class="form-group">
-                                                <label for="senhaUsuario">Senha</label>
+                                                <label for="senhaAtualUsuario">Senha atual</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text"><i class="bi-key-fill"></i></div>
+                                                    </div>
+                                                    <input id="senhaAtualUsuario" type="password" class="form-control" name="senhaUsuario" 
+                                                    placeholder="Digite sua senha atual" value="" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm">
+                                            <div class="form-group">
+                                                <label for="senhaUsuario">Nova senha</label>
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
                                                         <div class="input-group-text"><i class="bi-key-fill"></i></div>
                                                     </div>
                                                     <input id="senhaUsuario" type="password" class="form-control" name="senhaUsuario" 
-                                                    placeholder="Digite sua senha" value="" required>
+                                                    placeholder="Digite sua nova senha" value="" required>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-sm">
                                             <div class="form-group">
-                                                <label for="senha2Usuario">Repita sua senha</label>
+                                                <label for="senha2Usuario">Repita sua nova senha</label>
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
                                                         <div class="input-group-text"><i class="bi-key-fill"></i></div>
                                                     </div>
                                                     <input id="senha2Usuario" type="password" class="form-control" name="senha2Usuario" 
-                                                    placeholder="Repita a sua senha" value="" required>
+                                                    placeholder="Repita a sua nova senha" value="" required>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm text-right">
-                                            <button class="btn btn-primary" type="submit">Cadastrar</button>
+                                            <button class="btn btn-primary" type="submit">Salvar</button>
                                         </div>
                                     </div>
                                 </form>
