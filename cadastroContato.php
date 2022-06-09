@@ -1,3 +1,6 @@
+<?php
+    include "conectaBanco.php";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -293,6 +296,15 @@
                                                         <select class="form-control" name="estadoContato" id="estadoContato"
                                                         required>
                                                             <option>Escolha o estado</option>
+                                                            <?php
+                                                              $sqlEstados = "SELECT codigoEstado, nomeEstado FROM estados";
+
+                                                              $resultadosEstados = $conexao->query($sqlEstados)->fetchAll();
+                                                            
+                                                              foreach ($resultadosEstados as list($codigoEstado, $nomeEstado)){
+                                                                  echo "<option value=\"$codigoEstado\">$nomeEstado</option>\n";
+                                                              }
+                                                            ?>  
                                                         </select>
                                                     </div>
                                                 </div>
@@ -418,6 +430,11 @@
         //linha que aplica mascara ao telefone
         $('.mascara-telefone').mask(SPMaskBehavior, spOptions);
 
+        $('#estadoContato').change(function (){
+          $('#cidadeContato').html('<option>Carregando...</option>');
+          $('#cidadeContato').load('listaCidades.php?codigoEstado='
+                                    + $('#estadoContato').val());
+        });
 
     });
 
